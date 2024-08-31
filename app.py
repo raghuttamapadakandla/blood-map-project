@@ -15,9 +15,9 @@ app = Flask(__name__)
 app.secret_key = b'\xeb\xa2\xc9\x1b#\x84\xb8\x1cjq\xc0\x1e3\x11+\xc9'
 
 # MongoDB Database
-username = quote_plus("raghu")
-password = quote_plus("Rags@db")
-connection_string = f"mongodb+srv://{username}:{password}@epics.h9jqnez.mongodb.net/?retryWrites=true&w=majority&appName=epics"
+username = quote_plus("xxxxx")
+password = quote_plus("xxxxx")
+connection_string = f"mongodb+srv://{username}:{password}{link}"
 
 client = pymongo.MongoClient(connection_string)
 
@@ -109,7 +109,7 @@ class User:
 
         conn = http.client.HTTPConnection('geocode.xyz')
         params = urllib.parse.urlencode({
-            'auth': '485843031408692817330x6056', #NEED TO HIDE
+            'auth': 'xxxxx', #Add your API Key here
             'locate': user_address,
             'region': 'IN',
             'json': 1,
@@ -190,7 +190,7 @@ class Collector:
         
         conn = http.client.HTTPConnection('geocode.xyz')
         params = urllib.parse.urlencode({
-            'auth': '485843031408692817330x6056', #NEED TO HIDE
+            'auth': 'xxxxx', #Geocode API
             'locate': collector_address,
             'region': 'IN',
             'json': 1,
@@ -386,7 +386,7 @@ def resolve_distance(self, user_cords, collector_cords):
     params = {
         "origins": collector_cords,
         "destinations": user_cords,
-        "key": 'HbiExkQepWkOgXyshhHEq8jvWepWlr5udhTVQVQwTq8Pubp36DbDhHQmozDDdmkt'
+        "key": 'xxxxx' #Add your distancematrix.ai API key here
     }
     response = requests.get(base_url, params=params)
     rows = response.get('rows', [])
