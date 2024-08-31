@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="main_container" style="display: flex; justify-content: space-between; margin: 15px;">
+
+    <div class="card">
+
+        <h1 class="center">Create a Collector Account</h1>
+
+        <form name="collector_signup_form">
+
+            <label for="blood_bank">Blood Bank/Hospital Name</label>
+            <input type="text" name="blood_bank" class="field" required>
+
+            <label for="collector_address">Blood Bank/Hospital Address</label>
+            <input type="text" name="collector_address" class="field" required>
+
+            <label for="med_lic_num">Indian Medical Council Licence Number</label>
+            <input type="text" name="med_lic_num" class="field" required>
+
+            <label for="username">Username</label>
+            <input type="text" name="username" class="field" required>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" class="field" required>
+
+            <p class="error error--hidden"></p>
+
+            <input type="submit" value="Sign Up" class="btn">
+
+        </form>
+
+    </div>
+
+</div>
+
+<div class="card ml-auto" style="height: max-content;">
+    <h1 class="text-right">Already have an account?</h1>
+    <a href="/collector/login" class="btn">Log In</a>
+</div>
+
+
+
+{% endblock %}

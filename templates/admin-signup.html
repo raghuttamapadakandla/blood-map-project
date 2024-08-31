@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="main_container" style="display: flex; justify-content: space-between; margin: 15px;">
+
+    <div class="card">
+
+        <h1 class="center">Create an Admin/Volunteer Account</h1>
+
+        <form name="admin_signup_form">
+
+            <label for="name">Name</label>
+            <input type="text" name="name" class="field" required>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" class="field" required>
+
+            <label for="phone">Phone</label>
+            <input type="number" name="phone" class="field" required>
+
+            <label for="aadhar_card_number">Aadhar Card Number</label>
+            <input type="number" name="aadhar_card_number" class="field" required>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" class="field" required>
+
+            <p class="error error--hidden"></p>
+
+            <input type="submit" value="Sign Up" class="btn">
+
+        </form>
+
+    </div>
+
+</div>
+
+<div class="card ml-auto" style="height: max-content;">
+    <h1 class="text-right">Already have an account?</h1>
+    <a href="/admin/login" class="btn">Log In</a>
+</div>
+
+
+
+{% endblock %}

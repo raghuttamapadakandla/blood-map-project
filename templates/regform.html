@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    /* Base Styles */
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar {
+        padding: 50px 0px;
+
+    }
+
+    .nav-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .navbar-brand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+
+    .btn--secondary {
+        text-decoration: none;
+        background-color: #CFD8DC;
+        color: white;
+        padding: 5px 10px;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn--secondary:hover {
+        background-color: #B0BEC5;
+    }
+
+    .card-wrapper {
+        background-color: #CFD8DC;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .card {
+        background-color: #4F5969;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 45%;
+    }
+
+    .field {
+        width: calc(100% - 24px);
+        padding: 12px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .field[type="checkbox"] {
+        margin-top: 0;
+        align-items: left;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .error--hidden {
+        display: none;
+    }
+
+    .btn {
+        padding: 15px;
+        border: none;
+        border-radius: 30px;
+        /* Increase border-radius for a more rounded button */
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        /* Adding subtle gradient */
+        background-image: linear-gradient(to right, #4CAF50, #2E7D32);
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        /* Adding shadow for depth */
+    }
+
+    .btn:hover {
+        background-color: #45a049;
+        background-image: linear-gradient(to right, #45a049, #2E7D32);
+        /* Gradient transition on hover */
+    }
+
+
+    .form-info {
+        width: 45%;
+    }
+
+    .form-info h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .form-info p {
+        font-size: 1rem;
+        color: #37474F;
+    }
+</style>
+
+<nav class="navbar">
+    <div class="nav-title">
+        <a class="navbar-brand">Dashboard</a>
+        <a href="\user\signout" class="btn btn--secondary">Sign Out</a>
+    </div>
+    <!-- <div class="center">
+    </div> -->
+</nav>
+<div class="card-wrapper" style="background-color:#CFD8DC; display:flex; justify-content:space-between;">
+    <div class="card" style="background-color:#4F5969;">
+
+        <h1 class="center" style="color:white;">Additional Details Form</h1>
+
+        <form name="reg_form">
+
+            <input type="text" name="blood_group" class="field" placeholder="Enter Your Blood Group" required>
+
+            <input type="text" name="sex" class="field" placeholder="Enter Gender" required>
+
+            <input type="number" name="age" class="field" placeholder="Enter Age" required>
+
+            <input type="number" name="weight" class="field" placeholder="Enter Weight" required>
+
+            <input type="number" name="height" class="field" placeholder="Enter Height" required>
+
+            <input type="text" name="address" class="field" placeholder="Enter Address" required>
+
+            <label for="Daibetes" style="color:white; font-size:1rem;">Diabetes</label>
+            <input type="checkbox" name="Diabetes" class="field" style="margin-top:0px; align-items:left;"
+                placeholder="Diabetes">
+
+            <input type="text" name="disease" class="field" placeholder="Enter Previous Disease History">
+
+            <p class="error error--hidden"></p>
+
+            <input type="submit" value="Submit Details" class="btn">
+
+        </form>
+
+    </div>
+
+    <div class="form-info" style="width:50%;">
+        <h1>Why Do We Need This Information</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quis labore in rerum ab ea quibusdam, illo
+            aspernatur maiores fugiat. Minima sunt fuga est. Minus illum, earum distinctio similique libero officia
+            molestiae magni voluptas ea aut est laudantium voluptatem quos?</p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="main_container" style="display: flex; justify-content: space-between; margin: 15px;">
+
+    <div class="card">
+
+        <h1 class="center">Blood Search Starter</h1>
+
+        <form name="blood_search_starter">
+
+            <label for="med_lic_num">Indian Medical Council Licence Number</label>
+            <input type="text" name="med_lic_num" class="field" required>
+
+            <input type="submit" value="Start Search" class="btn">
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

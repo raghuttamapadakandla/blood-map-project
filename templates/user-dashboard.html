@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  /* General Styles */
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .nav-title {
+    display: flex;
+  }
+
+  .center {
+    display: flex;
+  }
+
+  .btn {
+    text-decoration: none;
+    color: #CFD8DC;
+    background-color: #45a049;
+    padding: 8px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #37474F;
+  }
+
+  /* Dashboard Section */
+
+  .card-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    /* width: 100%; */
+    background-color: #CFD8DC;
+    padding: 30px;
+  }
+
+  .dash-first {
+    display: flex;
+
+
+    width: 50%;
+    /* position: relative; */
+  }
+
+  .dash-second {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* width: 70%; */
+
+  }
+
+  /* .drop {
+    position: absolute;
+    background-image: url('https://img.icons8.com/color/48/000000/blood-donation.png');
+    width: 40px;
+    height: 40px;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+} */
+
+  /* Details Card Section */
+
+  .details-card {
+    display: flex;
+    justify-content: center;
+    background-color: #CFD8DC;
+    padding: 30px;
+  }
+
+  .details-card .card {
+    background-color: #455A64;
+    width: max-content;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 30px;
+  }
+
+  .details-card .card h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  /* Button Style */
+  .btn-third {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-third:hover {
+    background-color: #45a049;
+  }
+</style>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  .drop {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #c00;
+    /* red */
+    border-radius: 50%;
+    animation: fall 2s linear infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(100vh);
+      opacity: 1;
+    }
+  }
+</style>
+
+
+<nav class="navbar">
+  <div class="nav-title">
+    <a class="navbar-brand">Dashboard</a>
+  </div>
+  <div class="left">
+    <a href="/" class="btn btn--secondary">Home</a>
+  </div>
+  <div class="center">
+    <a href="/user/signout" class="btn btn--secondary">Sign Out</a>
+  </div>
+</nav>
+
+<div class="card-wrapper">
+
+  <div class="dash-second">
+    <h1 class="center" style="display: flex; align-items: center; justify-content: center;">Your Info</h1>
+
+    <p style="font-weight:800;">
+      <strong>ID:</strong> {{ session['user']['_id'] }}<br><br>
+      <strong>Name:</strong> {{ session['user']['name'] }}<br><br>
+      <strong>Email:</strong> {{ session['user']['email'] }}
+    </p>
+  </div>
+
+  <div class="dash-first">
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const numberOfDrops = 6; // Number of blood drops
+
+        for (let i = 0; i < numberOfDrops; i++) {
+          createDrop();
+        }
+
+        function createDrop() {
+          const drop = document.createElement("div");
+          drop.classList.add("drop");
+
+          // Random position within the viewport
+          const randomX = Math.random() * (window.innerWidth - 40); // Subtract 40 to account for drop width
+          const randomY = Math.random() * (window.innerHeight - 40); // Subtract 40 to account for drop height
+          drop.style.left = `${randomX}px`;
+          drop.style.top = `${randomY}px`;
+
+          document.body.appendChild(drop);
+        }
+      });
+    </script>
+
+  </div>
+
+</div>
+
+</div>
+
+
+<div class="details-card" style="display: flex; background-color:#CFD8DC;">
+  <div class="card text-center" style="width: max-content; background-color:#455A64; height:150px;">
+
+    <h2 class="center" style="color:white;">Want to Donate Blood?</h2>
+    <div class="ml-auto" style="width: max-content;">
+      <a href="/user/regform" class="btn btn-third">Fill the Details</a>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

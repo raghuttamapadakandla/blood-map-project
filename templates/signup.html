@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    /* Define styles for main container */
+
+
+
+    .main_container {
+        display: flex;
+        justify-content: space-around;
+        margin: 50px;
+        align-items: center;
+    }
+
+    /* Style for image section */
+    .img-sign {
+        width: 50%;
+    }
+
+    /* Style for card section */
+    .card {
+        height: 500px;
+        background-color: #d9ef69;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Style for sign up form */
+    .sign-head {
+        background-color: #007bff;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+        animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+        0% {
+            transform: translateY(-100%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .sign-head h1 {
+        color: white;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .field {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+    .field:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+    .error {
+        color: red;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+
+    .error--hidden {
+        display: none;
+    }
+
+    .btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    .log-dir {
+        text-align: center;
+        margin-top: 20px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .log-dir a {
+        text-decoration: none;
+        color: #007bff;
+        transition: color 0.3s ease;
+    }
+
+    .log-dir a:hover {
+        text-decoration: underline;
+        color: #0056b3;
+    }
+
+    /* Animation for image */
+    .img-sign img {
+        width: 100%;
+        height: auto;
+        animation: fadeInImg 1s ease-in-out;
+    }
+
+    @keyframes fadeInImg {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<div class="main_container">
+
+    <div class="img-sign" style="width: 50%">
+        <img src="../static/res/img1.jpg" style="height:400px; width:400px" alt="">
+    </div>
+    <div class="card" style="height:500px">
+        <div class="sign-head">
+            <h1 class="center" style="color:white;">Create an Account</h1>
+        </div>
+        <form name="signup_form">
+
+            <input type="text" name="name" class="field" placeholder="Enter Your Name" required>
+
+            <input type="email" name="email" class="field" placeholder="Enter Your Email Id" required>
+
+            <input type="password" name="password" class="field" placeholder="Enter Password" required>
+
+            <p class="error error--hidden"></p>
+
+            <input type="submit" value="Sign Up" class="btn">
+
+        </form>
+        <div class="log-dir" style="align-items:center; width:max-content; margin:auto;">
+            <a href="/user/login" style="text-decoration:none;">
+                <h2>I already have an Account, Log In!</h2>
+            </a>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+{% endblock %}

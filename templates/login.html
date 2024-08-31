@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    /* Base Styles */
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+    }
+
+    .main_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px;
+    }
+
+    .inner-main {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card {
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 30px;
+        height: 450px;
+        width: 45%;
+    }
+
+    .img-sign img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    /* Form Styles */
+
+    .field {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .field:focus {
+        outline: none;
+        border-color: #4CAF50;
+    }
+
+    .btn {
+        /* width: 100%; */
+        display: flex;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .error--hidden {
+        display: none;
+    }
+
+    /* Additional Styles */
+
+    .card.ml-auto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: max-content;
+        text-align: right;
+        padding: 20px;
+    }
+
+    .card.ml-auto h1 {
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .card.ml-auto .btn {
+        background-color: #007bff;
+        padding: 12px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: white;
+    }
+
+    .card.ml-auto .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="main_container" style="display:flex; justify-content:center; align-items:center; margin:50px;">
+
+    <div class="inner-main"
+        style="width:100%; margin-left:40px; display:flex; justify-content:space-between; align-items:center;">
+        <div class="card" style="height:450px">
+
+            <div class="sign-head" style="height:40px; margin-bottom:15px;">
+                <h1 class="center" style="color:white;">Log In To Account</h1>
+            </div>
+
+            <form name="login_form">
+
+                <input type="email" name="email" class="field" placeholder="Enter Your Email Id"
+                    style="margin-bottom:40px;" required>
+
+                <input type="password" name="password" class="field" placeholder="Enter Password" required>
+
+                <p class="error error--hidden"></p>
+
+                <input type="submit" value="Log In" class="btn">
+
+            </form>
+
+        </div>
+
+        <div class="img-sign" style="width:50%;">
+            <img src="../static/res/img3.jpg" style="height:450px; width:450px;" alt="">
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card ml-auto" style="height: max-content;">
+    <h1 class="text-right">Unfamiliar Territory? No Problem!</h1>
+    <a href="/user/signup" class="btn">Signup with us</a>
+</div>
+
+{% endblock %}

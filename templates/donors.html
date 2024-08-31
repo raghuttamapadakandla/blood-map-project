@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Potential Donors</h1>
+{% for donor in donors %}
+<div>
+    <h2>{{ donor['_id'] }}</h2>
+    <p>Name: {{ donor['name'] }}</p>
+    <p>Address: {{ donor['address'] }}</p>
+    <p>E-Mail: {{ donor['email'] }}</p>
+    <!-- Add more fields as needed -->
+</div>
+{% endfor %}
+
+{% endblock %}
