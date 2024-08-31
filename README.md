@@ -8,7 +8,7 @@ This enables a much higher probability of obtaining blood as donors are more inc
 
 This project is still a work in progress and we intend to keep working on it to make it better and reach audiences as soon as possible.
 
-If you still wish to see how the project was made follow the below steps:
+If you wish to see how the project was made follow the below steps:
 
 ## Requirements
 - Python 3.x
